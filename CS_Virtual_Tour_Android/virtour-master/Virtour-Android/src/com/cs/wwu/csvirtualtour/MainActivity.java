@@ -74,7 +74,7 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main);
 		
 		if (this.getIntent().getExtras() != null)
 		{
@@ -150,6 +150,8 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 		Button b_scanner = new Button(this);
 		b_scanner.setLayoutParams(BUTTON_LAYOUT_PARAMS);
 		b_scanner.setText("QR Code");
+        b_scanner.setBackgroundColor(16263);
+
 		b_scanner.setOnClickListener(this);
 		b_scanner.setId(QR_READER_ID);
 		
