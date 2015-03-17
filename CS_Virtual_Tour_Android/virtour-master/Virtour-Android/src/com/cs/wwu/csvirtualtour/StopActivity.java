@@ -155,7 +155,7 @@ public class StopActivity extends Activity implements OnClickListener, OnTaskCom
 		next.setLayoutParams(params);
 		next.setId(BTN_NEXT_ID);
 		next.setText("Next Stop");
-        next.setTextColor(Color.parseColor("#BAD80A"));
+        next.setTextColor(Color.parseColor("#FFC61E"));
         next.setBackgroundColor(Color.parseColor("#0083D6"));
 
 		

@@ -285,6 +285,11 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 					//sArrayList.add(s.getStopName());
 					Button Temp = new Button(this);
 					Temp.setLayoutParams(BUTTON_LAYOUT_PARAMS);
+
+                    Button ws = new Button(this);
+                    ws.setLayoutParams(BUTTON_LAYOUT_PARAMS);
+                    ws.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
 					Log.d("Main",s.getStopName());
 					Temp.setText(s.getStopName());
 					Temp.setId(s.getStopID());
@@ -292,6 +297,7 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
                     Temp.setTextColor(Color.parseColor("#FFC61E"));
                     Temp.setBackgroundColor(Color.parseColor("#0083D6"));
 					buttonLayout.addView(Temp);
+                    //buttonLayout.addView(ws);
 				}
 			}
 		}
