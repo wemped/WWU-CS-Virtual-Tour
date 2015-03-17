@@ -11,7 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:background="#003f87"
       	android:text="@string/welcome_para"
+        android:textColor="#FFC61E"
         android:gravity="center">
 
         <requestFocus />
@@ -25,12 +27,16 @@
             android:id="@+id/btn_tour"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#003f87"
+            android:textColor="#CC2D30"
             android:text="Start Guided Tour" />
 
         <Button
             android:id="@+id/btn_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#0083D6"
+            android:textColor="#FFC61E"
             android:text="Browse Stops" />
 
     </LinearLayout>
