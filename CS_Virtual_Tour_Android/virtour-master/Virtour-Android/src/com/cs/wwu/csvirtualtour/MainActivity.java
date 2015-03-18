@@ -21,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
@@ -88,8 +89,9 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 			Globals.setFirstRun(true);
 		}
 		generateHome();
-		
-	}
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
 	
 
 	@Override
@@ -149,24 +151,28 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 
 
 				//Temporary QR scanning button
-		Button b_scanner = new Button(this);
-		b_scanner.setLayoutParams(BUTTON_LAYOUT_PARAMS);
-		b_scanner.setText("QR Code");
-        b_scanner.setTextColor(Color.parseColor("#FFC61E"));
-        b_scanner.setBackgroundColor(Color.parseColor("#0083D6"));
+        RelativeLayout qr_layout = new RelativeLayout(this);
+		ImageButton b_scanner = new ImageButton(this);
+		//b_scanner.setLayoutParams(BUTTON_LAYOUT_PARAMS);
+        b_scanner.setImageResource(R.drawable.qr_logo);
+        b_scanner.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
 		b_scanner.setOnClickListener(this);
 		b_scanner.setId(QR_READER_ID);
-		
+
+        qr_layout.addView(b_scanner);
+        qr_layout.setGravity(Gravity.CENTER);
+
 		mapLayout.addView(mapView);
 		//mapLayout.addView(buttonLayout);
 		
 		scrollLayout.addView(mapLayout);
-		scrollLayout.addView(b_scanner);
+
 		//scrollLayout.addView(welcomeTitle);
 	//crollLayout.addView(welcomeMessage);
 		scrollLayout.addView(buttonLayout);
-		
+
+        scrollLayout.addView(qr_layout);
 		
 		//Add Buttons to View 
 		addStops();
@@ -271,7 +277,10 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 		LinearLayout buttonLayout = (LinearLayout) findViewById(MAP_BUTTON_LAYOUT_ID);
 //		Log.d("Main","attempting to add stops");
 		//build a button for each stop (set id so we can determine which stop?)
-		
+
+        String[] bgColor = {"#0083D6","#003F87"};
+        int colorCnt = 0;
+
 		//ListView stopList = (ListView) findViewById(STOP_LIST_ID);
 		if (stops != null)
 		{
@@ -295,9 +304,10 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 					Temp.setId(s.getStopID());
 					Temp.setOnClickListener(this);
                     Temp.setTextColor(Color.parseColor("#FFC61E"));
-                    Temp.setBackgroundColor(Color.parseColor("#0083D6"));
+                    Temp.setBackgroundColor(Color.parseColor(bgColor[(colorCnt % 2)]));
 					buttonLayout.addView(Temp);
                     //buttonLayout.addView(ws);
+                    colorCnt++;
 				}
 			}
 		}
