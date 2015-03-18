@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.cs.wwu.csvirtualtour.R;
+
+import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -74,7 +76,7 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main);
 		
 		if (this.getIntent().getExtras() != null)
 		{
@@ -150,6 +152,9 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 		Button b_scanner = new Button(this);
 		b_scanner.setLayoutParams(BUTTON_LAYOUT_PARAMS);
 		b_scanner.setText("QR Code");
+        b_scanner.setTextColor(Color.parseColor("#FFC61E"));
+        b_scanner.setBackgroundColor(Color.parseColor("#0083D6"));
+
 		b_scanner.setOnClickListener(this);
 		b_scanner.setId(QR_READER_ID);
 		
@@ -280,11 +285,19 @@ public class MainActivity extends Activity implements OnClickListener, OnTaskCom
 					//sArrayList.add(s.getStopName());
 					Button Temp = new Button(this);
 					Temp.setLayoutParams(BUTTON_LAYOUT_PARAMS);
+
+                    Button ws = new Button(this);
+                    ws.setLayoutParams(BUTTON_LAYOUT_PARAMS);
+                    ws.setBackgroundColor(Color.parseColor("#FFFFFF"));
+
 					Log.d("Main",s.getStopName());
 					Temp.setText(s.getStopName());
 					Temp.setId(s.getStopID());
 					Temp.setOnClickListener(this);
+                    Temp.setTextColor(Color.parseColor("#FFC61E"));
+                    Temp.setBackgroundColor(Color.parseColor("#0083D6"));
 					buttonLayout.addView(Temp);
+                    //buttonLayout.addView(ws);
 				}
 			}
 		}

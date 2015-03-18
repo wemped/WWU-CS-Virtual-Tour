@@ -154,7 +154,10 @@ public class StopActivity extends Activity implements OnClickListener, OnTaskCom
 		//params.gravity = Gravity.RIGHT;
 		next.setLayoutParams(params);
 		next.setId(BTN_NEXT_ID);
-		next.setText("Next Stop");;
+		next.setText("Next Stop");
+        next.setTextColor(Color.parseColor("#FFC61E"));
+        next.setBackgroundColor(Color.parseColor("#0083D6"));
+
 		
 		next.setOnClickListener(this);
 		
@@ -163,6 +166,8 @@ public class StopActivity extends Activity implements OnClickListener, OnTaskCom
 		previous.setLayoutParams(params);
 		previous.setId(BTN_PREVIOUS_ID);
 		previous.setText("Previous Stop");
+        previous.setTextColor(Color.parseColor("#FFC61E"));
+        previous.setBackgroundColor(Color.parseColor("#003F87"));
 		
 		previous.setOnClickListener(this);
 		
