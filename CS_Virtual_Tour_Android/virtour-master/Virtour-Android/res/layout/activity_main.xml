@@ -34,13 +34,11 @@
 
                 <Button
                     android:id="@+id/btn_floor1"
-                    android:backgroundTint="#003F87"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/floor1" />
 
                 <Button
-                    android:backgroundTint="#003F87"
                     android:id="@+id/btn_floor4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
